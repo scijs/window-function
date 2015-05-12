@@ -6,7 +6,7 @@ Window functions for digital signal processing
 
 # Introduction
 
-Among other uses, [window functions](http://en.wikipedia.org/wiki/Window_function) help control [spectral leakage](http://en.wikipedia.org/wiki/Spectral_leakage) when doing Fourier Analysis. This collection of window functions is copied directly from Wikipedia.
+Among other uses, [window functions](http://en.wikipedia.org/wiki/Window_function) help control [spectral leakage](http://en.wikipedia.org/wiki/Spectral_leakage) when doing Fourier Analysis. This collection of window functions is copied directly from Wikipedia. Caveat emptor.
 
 # Example
 
@@ -27,7 +27,7 @@ But really, there are lots of cosines and function evaluations in many of these 
 
 Simply pass the window the sample number and total number of samples to calculate the value of the window function for the given sample.
 
-The plots below are calculated directly from the npm module and plotted with matplotlib to illustrate the spectral leakage. See [window functions](http://en.wikipedia.org/wiki/Window_function) for more details.
+The plots below are calculated directly from the npm module and plotted with matplotlib to illustrate the spectral leakage. See [the Wikipedia page on window functions](http://en.wikipedia.org/wiki/Window_function) for more details.
 
 
 #### `bartlettHann( i, N )`:
