@@ -1,18 +1,24 @@
 {
   "name": "window-functions",
   "version": "1.0.0",
-  "description": "Floating point complex modulus",
+  "description": "Window functions for spectral analysis",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha",
     "generate-plots": "node docs/generate.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/scijs/window-functions.git"
+  },
   "keywords": [
     "complex",
     "scijs",
-    "modulus",
+    "window-functions",
     "math",
-    "floating-point"
+    "fourier",
+    "spectral-analysis",
+    "dsp"
   ],
   "author": "Ricky Reusser",
   "license": "MIT",
