@@ -29,6 +29,24 @@ Simply pass the window the sample number and total number of samples to calculat
 
 The plots below are calculated directly from the npm module and plotted with matplotlib to illustrate the spectral leakage. See [the Wikipedia page on window functions](http://en.wikipedia.org/wiki/Window_function) for more details.
 
+### Window Functions
+- [Bartlett-Hann](#bartletthann-i-n-)
+- [Bartlett](#bartlett-i-n-)
+- [Blackman-Harris](#blackmanharris-i-n-)
+- [Blackman-Nuttall](#blackmannuttall-i-n-)
+- [Cosine](#cosine-i-n-)
+- [Exact Blackman](#exactblackman-i-n-)
+- [Flat top](#flattop-i-n-)
+- [Gaussian](#gaussian-i-n-sigma-)
+- [Hamming](#hamming-i-n-)
+- [Hann](#hann-i-n-)
+- [Lanczos](#lanczos-i-n-)
+- [Nuttall](#nuttall-i-n-)
+- [Rectangular](#rectangular-i-n-)
+- [Triangular](#triangular-i-n-)
+- [Tukey](#tukey-i-n-alpha-)
+- [Welch](#welch-i-n-)
+
 
 #### `bartlettHann( i, N )`:
 
