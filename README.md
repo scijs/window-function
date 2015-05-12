@@ -166,6 +166,16 @@ A tapered cosine window. Alpha controls the relative width of the flat section. 
 ![Welch](docs/plots/welch.png)
 
 
+## Testing
+
+There aren't really tests at the moment. To generate the plots, run
+
+```bash
+$ npm run generate-plots
+```
+
+It pipes them through matplotlib. Don't worry. I realize the irony.
+
 
 
 ## Credits
