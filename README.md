@@ -94,6 +94,8 @@ The plots below are calculated directly from the npm module and plotted with mat
 
 ![Exact Blackman](docs/plots/exact-blackman.png)
 
+The same as the Blackman window, except a0 = 0.42659 a1 = 0.49656, and a2 = 0.076849. These place zeros at the third and fourth sidelobes.
+
 #### `flatTop( i, N )`:
 
 ![Flat top Window Equation 1](docs/equations/flattop-1.png)
