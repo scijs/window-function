@@ -1,0 +1,24 @@
+{
+  "name": "window-functions",
+  "version": "1.0.0",
+  "description": "Floating point complex modulus",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha",
+    "generate-plots": "node docs/generate.js"
+  },
+  "keywords": [
+    "complex",
+    "scijs",
+    "modulus",
+    "math",
+    "floating-point"
+  ],
+  "author": "Ricky Reusser",
+  "license": "MIT",
+  "devDependencies": {
+    "jshint": "^2.7.0",
+    "mocha": "^2.2.4",
+    "plotly": "^1.0.2"
+  }
+}
