@@ -17,23 +17,21 @@ An example of applying a Hamming window to a signal array:
 var wfunc = require('scijs-window-functions'),
     i, N = signal.length;
 
-for(i=0; i<N; i++) {
-  signal[i] *= wfunc.hamming(i,N)
-}
+wfunc.window( signal, wfunc.hamming );
 ```
 
 But really, there are lots of cosines and function evaluations in many of these windows, so if you reuse the window, it may be beneficial to precalculate and reuse it.
 
 # Usage
 
-#### `apply( windowFunction [, parameters] )`
+#### `window( array, windowFunction [, parameters] )`
 
-To apply a window function to an existing signal, pass the window function and any additional parameters to `apply`. For example, given an `Array` `signal`,
+To apply a window function to an existing signal, pass the array, the window function and any additional parameters to `window`. For example, given an `Array` `signal`,
 
 ```javascript
-var winfunc = require('scijs-window-functions')
+var wfuncs = require('scijs-window-functions')
 
-apply( signal, winfunc.gaussian, 0.4 )
+wfuncs.window( signal, wfuncs.gaussian, 0.4 )
 ```
 
 #### `generate( windowFunction, N )`

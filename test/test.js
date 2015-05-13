@@ -53,11 +53,11 @@ describe('applies a window function',function() {
   })
 
   it('applies a window to a signal',function() {
-    wfunc.apply( x, wfunc.hamming )
+    wfunc.window( x, wfunc.hamming )
   })
 
   it('passes extra arguments to a window function',function() {
-    wfunc.apply( x, wfunc.gaussian, 0.1 )
+    wfunc.window( x, wfunc.gaussian, 0.1 )
     assert( isFinite(x[0]), 'samples are finite' )
     assert( x[0] < 1e-8, 'samples have been windowed' )
   })
