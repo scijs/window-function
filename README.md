@@ -1,6 +1,6 @@
-# window-functions
+# scijs-window-functions
 
-[![Build Status](https://travis-ci.org/scijs/window-functions.svg?branch=master)](https://travis-ci.org/scijs/window-functions) [![npm version](https://badge.fury.io/js/window-functions.svg)](http://badge.fury.io/js/window-functions)  [![Dependency Status](https://david-dm.org/scijs/window-functions.svg)](https://david-dm.org/scijs/window-functions)
+[![Build Status](https://travis-ci.org/scijs/window-functions.svg?branch=master)](https://travis-ci.org/scijs/window-functions) [![npm version](https://badge.fury.io/js/scijs-window-functions.svg)](http://badge.fury.io/js/scijs-window-functions)  [![Dependency Status](https://david-dm.org/scijs/window-functions.svg)](https://david-dm.org/scijs/window-functions)
 
 Window functions for digital signal processing
 
@@ -13,7 +13,7 @@ Among other uses, [window functions](http://en.wikipedia.org/wiki/Window_functio
 An example of applying a Hamming window to a signal array:
 
 ```javascript
-var wfunc = require('window-functions'),
+var wfunc = require('scijs-window-functions'),
     i, N = signal.length;
 
 for(i=0; i<N; i++) {
@@ -25,11 +25,26 @@ But really, there are lots of cosines and function evaluations in many of these 
 
 # Usage
 
-Simply pass the window the sample number and total number of samples to calculate the value of the window function for the given sample.
+#### `apply( windowFunction [, parameters] )`
 
-The plots below are calculated directly from the npm module and plotted with matplotlib to illustrate the spectral leakage. See [the Wikipedia page on window functions](http://en.wikipedia.org/wiki/Window_function) for more details.
+To apply a window function to an existing signal, pass the window function and any additional parameters to `apply`. For example, given an `Array` `signal`,
 
-### Window Functions
+```javascript
+var winfunc = require('scijs-window-functions')
+
+apply( signal, winfunc.gaussian, 0.4 )
+```
+
+#### `generate( windowFunction, N )`
+
+Generate creates a new `Array` with length `N` in which it evaluates the window function. It returns the newly-created array.
+
+
+
+## Window Functions
+
+To calculate the value of a window function, pass the sample number and total number of samples to one of the window functions listed below, along with any additional parameters it may require. The plots below are calculated from the npm module and plotted with Fourier transform to illustrate the spectral leakage. See [the Wikipedia page on window functions](http://en.wikipedia.org/wiki/Window_function) for more details.
+
 - [Bartlett-Hann](#bartletthann-i-n-)
 - [Bartlett](#bartlett-i-n-)
 - [Blackman-Harris](#blackmanharris-i-n-)

@@ -64,9 +64,9 @@ var plots = [
     func: wfunc.blackmanHarris
   },
   {
-    prefix: 'flattop',
+    prefix: 'flat-top',
     name: 'Flat Top Window',
-    func: wfunc.flattop
+    func: wfunc.flatTop
   },
   {
     prefix: 'bartlett-hann',

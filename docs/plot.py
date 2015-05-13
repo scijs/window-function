@@ -31,7 +31,7 @@ ax = pl.gca()
 pl.plot(x,y,color="black",lw=1)
 ax.fill_between(x,0,y,color="#006699")
 
-if prefix == 'flattop':
+if prefix == 'flatTop':
   pl.axis([0,1,-1,5])
 else:
   pl.axis([0,1,0,1.05])
