@@ -1,6 +1,6 @@
 {
   "name": "scijs-window-functions",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Window functions for spectral analysis",
   "main": "lib/index.js",
   "scripts": {
