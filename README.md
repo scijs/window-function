@@ -34,7 +34,7 @@ var wfuncs = require('scijs-window-functions')
 wfuncs.window( signal, wfuncs.gaussian, 0.4 )
 ```
 
-#### `generate( windowFunction, N )`
+#### `generate( windowFunction, N [, parameters] )`
 
 Generate creates a new `Array` with length `N` in which it evaluates the window function. It returns the newly-created array.
 
