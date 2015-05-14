@@ -182,7 +182,7 @@ A tapered cosine window. Alpha controls the relative width of the flat section. 
 
 ## Testing
 
-There aren't really tests at the moment. To generate the plots, run
+The tests ensure the window functions aren't returning NaN, but it's hard to have confidence in the accuracy with tests. Instead, I opted to focus on visual testing via plots and Fourier Transforms. To generate the plots, run
 
 ```bash
 $ npm run generate-plots
