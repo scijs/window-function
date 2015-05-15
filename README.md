@@ -9,38 +9,7 @@ Window functions for digital signal processing
 
 Among other uses, [window functions](http://en.wikipedia.org/wiki/Window_function) help control [spectral leakage](http://en.wikipedia.org/wiki/Spectral_leakage) when doing Fourier Analysis. This collection of window functions is copied directly from Wikipedia. Caveat emptor.
 
-# Example
-
-An example of applying a Hamming window to a signal array:
-
-```javascript
-var wfunc = require('scijs-window-functions'),
-    i, N = signal.length;
-
-wfunc.window( signal, wfunc.hamming );
-```
-
-But really, there are lots of cosines and function evaluations in many of these windows, so if you reuse the window, it may be beneficial to precalculate and reuse it.
-
-# Usage
-
-#### `window( array, windowFunction [, parameters] )`
-
-To apply a window function to an existing signal, pass the array, the window function and any additional parameters to `window`. For example, given an `Array` `signal`,
-
-```javascript
-var wfuncs = require('scijs-window-functions')
-
-wfuncs.window( signal, wfuncs.gaussian, 0.4 )
-```
-
-#### `generate( windowFunction, N [, parameters] )`
-
-Generate creates a new `Array` with length `N` in which it evaluates the window function. It returns the newly-created array.
-
-
-
-## Window Functions
+## Usage
 
 To calculate the value of a window function, pass the sample number and total number of samples to one of the window functions listed below, along with any additional parameters it may require. The plots below are calculated from the npm module and plotted with Fourier transform to illustrate the spectral leakage. See [the Wikipedia page on window functions](http://en.wikipedia.org/wiki/Window_function) for more details.
 
