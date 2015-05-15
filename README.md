@@ -11,6 +11,22 @@ Among other uses, [window functions](http://en.wikipedia.org/wiki/Window_functio
 
 ## Usage
 
+To require all window functions, include the top-level `scijs-window-functions` module:
+
+```javascript
+var wfuncs = require('scijs-window-functions')
+
+var value = wfuncs.blackmanHarris( 50, 101 )
+```
+
+You can also require a single window function:
+
+```javascript
+var blackmanHarris = require('scijs-wind-wfunctions/blackman-harris')
+
+var value = blackmanHarris( 50, 101 )
+```
+
 To calculate the value of a window function, pass the sample number and total number of samples to one of the window functions listed below, along with any additional parameters it may require. The plots below are calculated from the npm module and plotted with Fourier transform to illustrate the spectral leakage. See [the Wikipedia page on window functions](http://en.wikipedia.org/wiki/Window_function) for more details.
 
 - [Bartlett-Hann](#bartletthann-i-n-)
