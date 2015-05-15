@@ -2,7 +2,7 @@
   "name": "scijs-window-functions",
   "version": "2.0.0",
   "description": "Window functions for spectral analysis",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha",
     "generate-plots": "node docs/generate.js"

@@ -1,6 +1,6 @@
 'use strict'
 
-var wfunc = require('../lib'),
+var wfunc = require('../'),
     assert = require('assert')
 
 var windows = [
