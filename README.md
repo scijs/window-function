@@ -22,7 +22,7 @@ var value = wfuncs.blackmanHarris( 50, 101 )
 You can also require a single window function:
 
 ```javascript
-var blackmanHarris = require('scijs-wind-wfunctions/blackman-harris')
+var blackmanHarris = require('scijs-window-functions/blackman-harris')
 
 var value = blackmanHarris( 50, 101 )
 ```
