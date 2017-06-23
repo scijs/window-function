@@ -1,6 +1,6 @@
-# scijs-window-functions
+# window-function
 
-[![Build Status](https://travis-ci.org/scijs/window-functions.svg?branch=master)](https://travis-ci.org/scijs/window-functions) [![npm version](https://badge.fury.io/js/scijs-window-functions.svg)](http://badge.fury.io/js/scijs-window-functions)  [![Dependency Status](https://david-dm.org/scijs/window-functions.svg)](https://david-dm.org/scijs/window-functions)
+[![Build Status](https://travis-ci.org/scijs/window-function.svg?branch=master)](https://travis-ci.org/scijs/window-function) [![npm version](https://badge.fury.io/js/window-function.svg)](http://badge.fury.io/js/window-function)  [![Dependency Status](https://david-dm.org/scijs/window-function.svg)](https://david-dm.org/scijs/window-function)
 
 
 Window functions for digital signal processing
@@ -11,10 +11,10 @@ Among other uses, [window functions](http://en.wikipedia.org/wiki/Window_functio
 
 ## Usage
 
-To require all window functions, include the top-level `scijs-window-functions` module:
+To require all window functions, include the top-level `window-function` module:
 
 ```javascript
-var wfuncs = require('scijs-window-functions')
+var wfuncs = require('window-function')
 
 var value = wfuncs.blackmanHarris( 50, 101 )
 ```
@@ -22,7 +22,7 @@ var value = wfuncs.blackmanHarris( 50, 101 )
 You can also require a single window function:
 
 ```javascript
-var blackmanHarris = require('scijs-wind-wfunctions/blackman-harris')
+var blackmanHarris = require('window-function/blackman-harris')
 
 var value = blackmanHarris( 50, 101 )
 ```

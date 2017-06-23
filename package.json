@@ -1,5 +1,5 @@
 {
-  "name": "scijs-window-functions",
+  "name": "window-function",
   "version": "2.0.2",
   "description": "Window functions for spectral analysis",
   "main": "index.js",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/scijs/window-functions.git"
+    "url": "git://github.com/scijs/window-function.git"
   },
   "keywords": [
     "complex",
     "scijs",
-    "window-functions",
+    "window-function",
     "math",
     "fourier",
     "spectral-analysis",
