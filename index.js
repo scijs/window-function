@@ -17,10 +17,10 @@ module.exports = {
   flatTop: require('./flat-top'),
   cosine: require('./cosine'),
   gaussian: require('./gaussian'),
-  tukey: require('./tukey')
+  tukey: require('./tukey'),
+  applyWindow: applyWindow
 }
 
-/*
 function applyWindow(signal, func) {
   var i, n=signal.length, args=[0,n]
 
@@ -36,7 +36,7 @@ function applyWindow(signal, func) {
   return signal;
 }
 
-
+/*
 function generate(func, N) {
   var i, args=[0,N]
   var signal = new Array(N);

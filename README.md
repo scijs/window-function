@@ -16,6 +16,16 @@ To require all window functions, include the top-level `window-function` module:
 ```javascript
 var wfuncs = require('window-function')
 
+var signal = [-1, 0, 1, 0, -1, 0]
+
+var windowedSignal = wfuncs.applyWindow(signal, wfuncs.blackmanHarris)
+```
+
+You can also apply the window functions yourself:
+
+```javascript
+var wfuncs = require('window-function')
+
 var value = wfuncs.blackmanHarris( 50, 101 )
 ```
 
