@@ -1,6 +1,6 @@
 {
   "name": "window-function",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Window functions for spectral analysis",
   "main": "index.js",
   "scripts": {
