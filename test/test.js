@@ -45,7 +45,7 @@ describe('window functions return a finite number',function() {
   })
 })
 
-/*describe('applies a window function',function() {
+describe('applies a window function',function() {
   
   var x
 
@@ -54,18 +54,19 @@ describe('window functions return a finite number',function() {
   })
 
   it('applies a window to a signal',function() {
-    wfunc.window( x, wfunc.hamming )
+    var y = wfunc.applyWindow( x, wfunc.hamming )
+    assert(y.length === x.length);
   })
 
   it('passes extra arguments to a window function',function() {
-    wfunc.window( x, wfunc.gaussian, 0.1 )
+    wfunc.applyWindow( x, wfunc.gaussian, 0.1 )
     assert( isFinite(x[0]), 'samples are finite' )
     assert( x[0] < 1e-8, 'samples have been windowed' )
   })
 })
 
 
-
+/*
 describe('generates a window function',function() {
   
   it('constructs an window function array',function() {
