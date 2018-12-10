@@ -11,17 +11,18 @@ Among other uses, [window functions](http://en.wikipedia.org/wiki/Window_functio
 
 ## Usage
 
-To require all window functions, include the top-level `window-function` module:
+Apply window to a signal:
 
 ```javascript
-var wfuncs = require('window-function')
+var blackmanHarris = require('window-function/blackman-harris')
+var applyWindow = require('window-function/apply')
 
 var signal = [-1, 0, 1, 0, -1, 0]
 
-var windowedSignal = wfuncs.applyWindow(signal, wfuncs.blackmanHarris)
+var windowedSignal = applyWindow(signal, blackmanHarris)
 ```
 
-You can also apply the window functions yourself:
+Apply the window functions yourself:
 
 ```javascript
 var wfuncs = require('window-function')
@@ -29,15 +30,11 @@ var wfuncs = require('window-function')
 var value = wfuncs.blackmanHarris( 50, 101 )
 ```
 
-You can also require a single window function:
+## API
 
-```javascript
-var blackmanHarris = require('window-function/blackman-harris')
+### `require('window-funciton/<type>')(i, total)`
 
-var value = blackmanHarris( 50, 101 )
-```
-
-To calculate the value of a window function, pass the sample number and total number of samples to one of the window functions listed below, along with any additional parameters it may require. The plots below are calculated from the npm module and plotted with Fourier transform to illustrate the spectral leakage. See [the Wikipedia page on window functions](http://en.wikipedia.org/wiki/Window_function) for more details.
+To calculate the value of a window function, pass the sample number `i` and `total` number of samples to one of the window functions listed below, along with any additional parameters it may require. The plots below are calculated from the npm module and plotted with Fourier transform to illustrate the spectral leakage. See [the Wikipedia page on window functions](http://en.wikipedia.org/wiki/Window_function) for more details.
 
 - [Bartlett-Hann](#bartletthann-i-n-)
 - [Bartlett](#bartlett-i-n-)
@@ -174,6 +171,13 @@ A tapered cosine window. Alpha controls the relative width of the flat section. 
 
 ![Welch](docs/plots/welch.png)
 
+### `require('window-function/apply')(array, fn)`
+
+Apply a windowing function to an array, modifies an array in-place.
+
+### `require('window-function/generate')(fn, n)`
+
+Generate an array of `n` samples of the window function `fn`.
 
 ## Testing
 
