@@ -4,7 +4,7 @@
   "description": "Window functions for spectral analysis",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "node test",
     "generate-plots": "node docs/generate.js"
   },
   "repository": {
@@ -24,7 +24,7 @@
   "license": "MIT",
   "devDependencies": {
     "jshint": "^2.7.0",
-    "mocha": "^2.2.4",
-    "plotly": "^1.0.2"
+    "plotly": "^1.0.2",
+    "tape": "^4.9.1"
   }
 }
