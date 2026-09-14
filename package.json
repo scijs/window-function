@@ -43,13 +43,6 @@
     "./util": "./util.js"
   },
   "types": "./index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./index.d.ts"
-      ]
-    }
-  },
   "scripts": {
     "test": "node --test test.js"
   },
