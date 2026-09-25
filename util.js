@@ -31,6 +31,28 @@ export function gegen (n, mu, x) {
 	return c1
 }
 
+/**
+ * Window from its spectrum sampled at N points, p[k] for frequencies πk/N: w = IDFT(p), centred, peak 1.
+ * Even N shifts half a sample first, so both lengths centre alike. As SciPy's chebwin. Used by dolphChebyshev, ultraspherical.
+ */
+export function fromSpectrum (p) {
+	let N = p.length, odd = N % 2, n = odd ? (N + 1) / 2 : N / 2 + 1, w = new Float64Array(N)
+	for (let j = odd ? 0 : 1; j < n; j++) {
+		let s = 0
+		for (let k = 0; k < N; k++) s += p[k] * cos(PI * k * (odd ? 2 * j : 2 * j - 1) / N)
+		if (odd) w[n - 1 + j] = w[n - 1 - j] = s
+		else w[n - 2 + j] = w[n - 1 - j] = s
+	}
+	return normalize(w)
+}
+
+/** Chebyshev polynomial T_n(x) for any real x. Used by dolphChebyshev. */
+export function chebyshev (n, x) {
+	if (abs(x) <= 1) return cos(n * acos(x))
+	let v = cosh(n * acosh(abs(x)))
+	return x < 0 && n % 2 ? -v : v
+}
+
 /** Normalize array to peak absolute value of 1. Used by array-computed windows. */
 export function normalize (w) {
 	let peak = 0

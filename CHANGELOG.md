@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.0.3
+
+- `dolphChebyshev` matches SciPy's `chebwin`: odd N was wrong, even N off-centre.
+- `taylor` matches SciPy's `taylor`: its sidelobe factor multiplied where it should divide.
+- `dpss` matches SciPy's `dpss` at any N and W, solved in Slepian's tridiagonal form.
+- `ultraspherical` tapers by default (`xmu` was 1, a rectangle), centres like `dolphChebyshev`, runs in O(N²), not O(N³).
+- `exactBlackman` uses the exact fractions 7938/18608, 9240/18608, 1430/18608.
+
 ## 3.0.0
 
 Breaking: ESM-only. `require()` no longer works.

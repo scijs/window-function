@@ -1,4 +1,4 @@
-import { cos, acosh, pow, PI, PI2, normalize } from './util.js'
+import { cos, acosh, pow, PI, PI2 } from './util.js'
 export default function taylor (i, N, nbar, sll) {
 	if (nbar == null) nbar = 4
 	if (sll == null) sll = 30
@@ -10,18 +10,20 @@ export default function taylor (i, N, nbar, sll) {
 		for (let m = 1; m < nbar; m++) {
 			let num = 1, den = 1
 			for (let n = 1; n < nbar; n++) {
-				num *= 1 - m * m * s2 / (A * A + (n - 0.5) * (n - 0.5))
+				num *= 1 - m * m / s2 / (A * A + (n - 0.5) * (n - 0.5))
 				if (n !== m) den *= 1 - m * m / (n * n)
 			}
 			Fm[m - 1] = (m % 2 ? 1 : -1) * num / (2 * den)
 		}
-		let w = new Float64Array(N)
+		// Unity at the centre, where every cosine is 1
+		let w = new Float64Array(N), centre = 1
+		for (let m = 1; m < nbar; m++) centre += 2 * Fm[m - 1]
 		for (let n = 0; n < N; n++) {
 			let v = 1
 			for (let m = 1; m < nbar; m++) v += 2 * Fm[m - 1] * cos(PI2 * m * (n - (N - 1) / 2) / N)
-			w[n] = v
+			w[n] = v / centre
 		}
-		c._w = normalize(w); c._N = N; c._nb = nbar; c._s = sll
+		c._w = w; c._N = N; c._nb = nbar; c._s = sll
 	}
 	return c._w[i]
 }

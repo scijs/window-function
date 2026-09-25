@@ -172,7 +172,7 @@ $w(n) = 0.42 - 0.5\cos\!\left(\frac{2\pi n}{N-1}\right) + 0.08\cos\!\left(\frac{
 
 ### `exactBlackman(i, N)`
 
-$w(n) = 0.42659 - 0.49656\cos\!\left(\frac{2\pi n}{N-1}\right) + 0.076849\cos\!\left(\frac{4\pi n}{N-1}\right)$
+$w(n) = \frac{7938}{18608} - \frac{9240}{18608}\cos\!\left(\frac{2\pi n}{N-1}\right) + \frac{1430}{18608}\cos\!\left(\frac{4\pi n}{N-1}\right)$
 
 <img src="https://raw.githubusercontent.com/audiojs/window-function/master/docs/plots/exactBlackman.svg">
 
@@ -371,7 +371,7 @@ Compute the full window on first call, cache the result. Recomputed when paramet
 
 `dB`: sidelobe attenuation, default **100**.
 
-$W(k) = (-1)^k T_{N-1}\!\left(\beta\cos\frac{\pi k}{N}\right)$, &ensp; $w = \text{IDFT}(W)$
+$W(k) = T_{N-1}\!\left(\beta\cos\frac{\pi k}{N}\right)$, &ensp; $\beta = \cosh\!\left(\frac{\cosh^{-1} 10^{dB/20}}{N-1}\right)$, &ensp; $w = \text{IDFT}(W)$, centred
 
 <img src="https://raw.githubusercontent.com/audiojs/window-function/master/docs/plots/dolphChebyshev.svg">
 
@@ -405,11 +405,11 @@ $\mathbf{T}\mathbf{v} = \lambda\mathbf{v}$, &ensp; $T_{jk} = \frac{\sin 2\pi W(j
 
 <img src="https://raw.githubusercontent.com/audiojs/window-function/master/docs/plots/dpss.svg">
 
-Dominant eigenvector of sinc Toeplitz matrix — provably optimal energy concentration. Also called Slepian window. Multitaper spectral estimation, neuroscience, climate science.[^slepian1978]
+Dominant eigenvector of sinc Toeplitz matrix — provably optimal energy concentration. Computed from the tridiagonal matrix that commutes with it, exact at any N and W. Also called Slepian window. Multitaper spectral estimation, neuroscience, climate science.[^slepian1978]
 
 ### `ultraspherical(i, N, mu, xmu)`
 
-`mu`: 0 = Dolph-Chebyshev, **1** (default) = Saramaki. `xmu`: sidelobe control (default **1**).
+`mu`: 0 = Dolph-Chebyshev, **1** (default) = Saramaki. `xmu`: sidelobe control, above 1 (default: Dolph–Chebyshev's β for 100 dB; 1 gives no taper).
 
 $W(k) = C_n^\mu\!\left(x_\mu\cos\frac{\pi k}{N}\right)$, &ensp; $w = \text{IDFT}(W)$
 
