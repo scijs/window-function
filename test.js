@@ -277,3 +277,18 @@ test('ultraspherical — tapered by default, Dolph–Chebyshev as mu → 0', () 
 		for (let i = 0; i < N; i++) assert.ok(near(limit[i], dolph[i], 1e-6), `${i}: ${limit[i]} vs ${dolph[i]}`)
 	}
 })
+
+test('dolphChebyshev, taylor, dpss, ultraspherical — N = 1, 2, 3 as SciPy gives them', () => {
+	// chebwin(N, 100), taylor(N, 4, 30), dpss(N, 0.1 N) over its peak; ultraspherical as its mu → 0 limit, Dolph–Chebyshev
+	let cases = {
+		dolphChebyshev: [[1], [1, 1], [0.50001, 1, 0.50001]],
+		taylor: [[1], [0.662065, 0.662065], [0.466906, 1, 0.466906]],
+		dpss: [[1], [1, 1], [0.937718, 1, 0.937718]],
+	}
+	for (let [name, refs] of Object.entries(cases))
+		for (let ref of refs) {
+			let v = w.generate(w[name], ref.length)
+			ref.forEach((r, i) => assert.ok(near(v[i], r, 1e-6), `${name}(${i}, ${ref.length}) = ${v[i]}, SciPy ${r}`))
+		}
+	for (let N of [1, 2]) assert.deepEqual([...w.generate(w.ultraspherical, N)], Array(N).fill(1))
+})
